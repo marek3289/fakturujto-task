@@ -6,4 +6,9 @@
   .btn-primary {
     @apply bg-blue-500 text-white font-bold py-4 px-8 rounded hover:bg-blue-600 hover:text-white;
   }
+  .products-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 16px;
+  }
 }

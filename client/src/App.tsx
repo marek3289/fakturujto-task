@@ -7,7 +7,7 @@ const App = () => {
 
   return (
     <AppProvider>
-      <main className='bg-[#171717] text-white h-screen'>
+      <main className='h-screen w-screen bg-white text-black'>
         {hasError && <h1 className='text-red-500'>An error occurred, please try again later</h1>}
         {isLoading && <div>Loading...</div>}
         {isReady && <AppRoutes />}
