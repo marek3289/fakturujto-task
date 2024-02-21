@@ -6,16 +6,18 @@ import { cn } from '@/helpers/cn'
 interface IProduct {
   id: number,
   name: string,
-  slug: string,
+  slug: string;
   description: string,
   createdAt: string,
   editedAt: string,
   coverImg: string,
-  color: string,
-  price: string
+  price: string,
+  quantity: number,
+  productionDate: string,
+  category: string
 }
 
-export default function SingleProduct({ id, name, slug, coverImg, price, color }: IProduct) {
+export default function SingleProduct({ id, name, slug, coverImg, price, category }: IProduct) {
 
   const handleDelete = useCallback((productId: number) => {
     console.log('remove item with id:', productId)
@@ -61,7 +63,7 @@ export default function SingleProduct({ id, name, slug, coverImg, price, color }
               {name}
             </Link>
           </h3>
-          <p className='mt-1 text-sm text-gray-500'>{color}</p>
+          <p className='mt-1 text-sm text-gray-500'>{category}</p>
         </div>
         <p className='text-sm font-medium text-gray-900'>{price}</p>
       </div>

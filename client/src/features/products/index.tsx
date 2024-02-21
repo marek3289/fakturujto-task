@@ -9,8 +9,10 @@ interface IProduct {
   createdAt: string,
   editedAt: string,
   coverImg: string,
-  color: string,
-  price: string
+  price: string,
+  quantity: number,
+  productionDate: string,
+  category: string
 }
 
 const productsList: IProduct[] = [
@@ -22,8 +24,10 @@ const productsList: IProduct[] = [
     createdAt: '2022-01-01',
     editedAt: '2022-01-02',
     coverImg: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg',
-    color: 'red',
-    price: '$10.99'
+    price: '$10.99',
+    quantity: 10,
+    productionDate: '2022-01-01',
+    category: 'smartphones'
   },
   {
     id: 2,
@@ -33,8 +37,10 @@ const productsList: IProduct[] = [
     createdAt: '2022-01-03',
     editedAt: '2022-01-04',
     coverImg: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-03.jpg',
-    color: 'blue',
-    price: '$15.99'
+    price: '$15.99',
+    quantity: 20,
+    productionDate: '2022-01-03',
+    category: 'laptops'
   },
   {
     id: 3,
@@ -44,8 +50,10 @@ const productsList: IProduct[] = [
     createdAt: '2022-01-05',
     editedAt: '2022-01-06',
     coverImg: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg',
-    color: 'green',
-    price: '$20.99'
+    price: '$20.99',
+    quantity: 15,
+    productionDate: '2022-01-05',
+    category: 'displays'
   },
   {
     id: 4,
@@ -55,8 +63,10 @@ const productsList: IProduct[] = [
     createdAt: '2022-01-07',
     editedAt: '2022-01-08',
     coverImg: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-    color: 'yellow',
-    price: '$25.99'
+    price: '$25.99',
+    quantity: 5,
+    productionDate: '2022-01-07',
+    category: 'smartphones'
   }
 ]
 
