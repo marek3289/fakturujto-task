@@ -1,14 +1,15 @@
 import { useCallback } from 'react'
 import { Link } from 'react-router-dom'
 
+import { useAppDispatch } from '@/hooks'
+import { deleteProduct } from '../slice'
 import { cn } from '@/helpers/cn'
 import type { IProduct } from '../types'
 
 export default function SingleProduct({ id, name, slug, coverImg, price, category }: IProduct) {
+  const dispatch = useAppDispatch()
 
-  const handleDelete = useCallback((productId: number) => {
-    console.log('remove item with id:', productId)
-  }, [])
+  const handleDelete = useCallback((productId: string) => dispatch(deleteProduct(productId)), [dispatch])
 
   const handleEdit = useCallback((productId: number) => {
     console.log('edit item with id:', productId)

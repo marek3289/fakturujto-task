@@ -1,7 +1,7 @@
 import type { FetchStatusType } from '@/types'
 
 export interface IProduct {
-  id: number,
+  id: string,
   name: string,
   slug: string;
   description: string,
@@ -19,4 +19,3 @@ export interface IProductSlice {
   status: FetchStatusType
   error: string | null
 }
-
