@@ -2,20 +2,7 @@ import { useCallback } from 'react'
 import { Link } from 'react-router-dom'
 
 import { cn } from '@/helpers/cn'
-
-interface IProduct {
-  id: number,
-  name: string,
-  slug: string;
-  description: string,
-  createdAt: string,
-  editedAt: string,
-  coverImg: string,
-  price: string,
-  quantity: number,
-  productionDate: string,
-  category: string
-}
+import type { IProduct } from '../types'
 
 export default function SingleProduct({ id, name, slug, coverImg, price, category }: IProduct) {
 
