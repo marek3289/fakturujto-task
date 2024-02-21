@@ -34,29 +34,18 @@ export function* handleDeleteProduct(productId: string): SagaIterator {
   }
 }
 
-// function* fetchProductsSaga() {
-//   try {
-//     const products = yield call(Api.fetchProducts);
-//     yield put({ type: ActionTypes.FETCH_PRODUCTS_SUCCESS, payload: products });
-//   } catch (e) {
-//     yield put({ type: ActionTypes.FETCH_PRODUCTS_FAILURE, payload: e.message });
-//   }
-// }
+// @Todo Add validation and notification
+export function* createProductSaga(newProduct: any) {
+  try {
+    const { data } = yield call(deleteProductById, newProduct)
 
-// function* createProductSaga(action) {
-//   try {
-//     const product = yield call(Api.createProduct, action.payload);
-//     yield put({ type: ActionTypes.CREATE_PRODUCT_SUCCESS, payload: product });
-//   } catch (e) {
-//     yield put({ type: ActionTypes.CREATE_PRODUCT_FAILURE, payload: e.message });
-//   }
-// }
-
-// function* updateProductSaga(action) {
-//   try {
-//     const product = yield call(Api.updateProduct, action.payload);
-//     yield put({ type: ActionTypes.UPDATE_PRODUCT_SUCCESS, payload: product });
-//   } catch (e) {
-//     yield put({ type: ActionTypes.UPDATE_PRODUCT_FAILURE, payload: e.message });
-//   }
-// }
+    if (data.status === 'success') {
+      // console.log('Success')
+      // const product = yield call(Api.createProduct, action.payload);
+    } else {
+      yield put(setError('Error adding the product'))
+    }
+  } catch (error) {
+    yield put(setError('Error adding the product'))
+  }
+}

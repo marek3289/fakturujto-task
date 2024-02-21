@@ -1,4 +1,3 @@
-import Products from './views/products'
-import ProductDetails from './views/product-details'
+import { Products, ProductDetails, AddProduct } from './views'
 
-export { Products, ProductDetails }
+export { Products, ProductDetails, AddProduct }

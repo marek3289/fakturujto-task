@@ -11,9 +11,7 @@ export default function SingleProduct({ id, name, slug, coverImg, price, categor
 
   const handleDelete = useCallback((productId: string) => dispatch(deleteProduct(productId)), [dispatch])
 
-  const handleEdit = useCallback((productId: number) => {
-    console.log('edit item with id:', productId)
-  }, [])
+  const handleEdit = useCallback((productId: string) => console.log('edit item with id:', productId), [])
   
   return (
     <li className='group relative'>
