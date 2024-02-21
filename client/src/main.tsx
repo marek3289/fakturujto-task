@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client'
 import App from './app.tsx'
 import reportWebVitals from './reportWebVitals'
 import './index.css'
-import './app.css'
+import './tailwind.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
