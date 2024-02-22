@@ -1,12 +1,15 @@
 import { z, ZodError } from 'zod'
 import { useFormik } from 'formik'
 
+import { useAppDispatch } from '@/hooks'
+import { createProduct } from '../slice'
+
 const productSchema = z.object({
   name: z.string().max(100).min(1),
   description: z.string().max(2000),
   price: z.number().min(0),
   quantity: z.number().min(0),
-  productionDate: z.date(),
+  productionDate: z.string(),
   category: z.enum(['smartphones', 'laptops', 'displays'])
 })
 
@@ -22,19 +25,18 @@ const validateForm = (values: Product) => {
 	}
 }
 const AddProductForm = () => {
+  const dispatch = useAppDispatch()
   const { values, errors, touched, handleChange, handleSubmit } = useFormik({
     initialValues: {
       name: '',
       price: 0,
       quantity: 0,
-      productionDate: new Date(),
+      productionDate: new Date().toISOString(),
       category: 'smartphones',
       description: ''
     },
     validate: validateForm,
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-    },
+    onSubmit: async (values) => await dispatch(createProduct(values))
   })
 
   return (

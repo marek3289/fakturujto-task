@@ -1,3 +1,4 @@
 import { Head } from './head'
+import { Snackbar } from './snackbar'
 
-export { Head }
+export { Head, Snackbar }

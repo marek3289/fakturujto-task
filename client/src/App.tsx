@@ -1,6 +1,7 @@
 import { AppProvider } from '@/providers'
 import { AppRoutes } from '@/routes'
 import { useAppInit } from '@/hooks'
+import { Snackbar } from '@/components'
 
 const App = () => {
   const { hasError, isLoading, isReady } = useAppInit()
@@ -11,6 +12,8 @@ const App = () => {
         {hasError && <h1 className='text-red-500'>An error occurred, please try again later</h1>}
         {isLoading && <div>Loading...</div>}
         {isReady && <AppRoutes />}
+
+        <Snackbar />
       </main>
     </AppProvider>
   )

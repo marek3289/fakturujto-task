@@ -26,6 +26,9 @@ const productsSlice = createSlice({
     deleteProduct: (state, action) => {
       return { ...state, products: state.products.filter(product => product.id !== action.payload) }
     },
+    createProduct: (state, action) => {
+      return { ...state, status: 'loading', products: [...state.products, action.payload] }
+    },
   },
 })
 
@@ -38,6 +41,6 @@ export const selectErrorMessage = (state: RootState) => state.products.error
 export const selectIsLoading = (state: RootState) =>
   state.products.status === 'loading' || state.products.status === 'idle'
 
-export const { getProducts, setProducts, setError, deleteProduct } = productsSlice.actions
+export const { getProducts, setProducts, setError, deleteProduct, createProduct } = productsSlice.actions
 
 export default productsSlice.reducer

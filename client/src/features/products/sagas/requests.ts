@@ -6,6 +6,10 @@ export function fetchProducts() {
   return axios.get(API_URL + '/api/products')
 }
 
+export function createNewProduct(values: any) {
+  return axios.post(API_URL + '/api/products/', values)
+}
+
 export function deleteProductById(productId: string) {
   return axios.delete(API_URL + '/api/products/' + productId)
 }
